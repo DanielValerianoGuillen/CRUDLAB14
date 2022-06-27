@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRUD14.MainPage">
+
+    <StackLayout>
+        <Entry Placeholder="FullName" x:Name="txtFullName" HorizontalOptions="FillAndExpand"/>
+        <Entry Placeholder="DateOfBirthday" x:Name="txtDateOfBirthday" HorizontalOptions="FillAndExpand"/>
+        <Entry Placeholder="Sex" x:Name="txtSex" HorizontalOptions="FillAndExpand"/>
+
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Save" Clicked="Button_Clicked"/>
+            <Button Text="Show" Clicked="Button_Clicked_1"/>
+
+        </StackLayout>
+        <Entry Placeholder="Filter" x:Name="txtFilter" HorizontalOptions="FillAndExpand"/>
+        <Button Text="ShowByText" Clicked="Button_Clicked_2"/>
+
+        <ListView x:Name="lvPeople">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding StudentID}"></Label>
+                            <Label Text="{Binding FullName}"></Label>
+                            <Label Text="{Binding DateOfBirthday}"></Label>
+                            <Label Text="{Binding Sex}"></Label>
+                        </StackLayout>
+
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

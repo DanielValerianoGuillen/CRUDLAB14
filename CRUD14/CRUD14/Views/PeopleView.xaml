@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRUD14.Views.PeopleView">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Placeholder="Filter"  Text="{Binding Filter}" HorizontalOptions="FillAndExpand"/>
+            <Button Text="ShowByText" Command="{Binding SearchCommand}" />
+            <ListView x:Name="lvPeople" ItemsSource="{Binding People}" BackgroundColor="{Binding Color}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding FullName}"></Label>
+                                <Label Text="{Binding DateOfBirthday}"></Label>
+                                <Label Text="{Binding Sex}"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
